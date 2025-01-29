@@ -50,6 +50,10 @@ In your terminal:
     - 500 - 599 => Server error responses
 
 
+- Streams:
+    - Ler pequenas partes e poder trabalhar sobre os dados mesmo sem ser o dado por completo (analogia com Netflix, Spotify)
+
+
 ## Delving deeper into the subject
 
 ### Differences between CommonJS and ES Modules
