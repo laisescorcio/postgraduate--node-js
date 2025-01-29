@@ -17,10 +17,11 @@ const server = http.createServer((req, res) => {
       name: "Laís Escorcio",
       email: "escorcio.lais@gmail.com",
     });
-    return res.end("Criação de usuário");
+
+    return res.writeHead(201).end(); // Status code 201 => Created
   }
 
-  return res.end("World");
+  return res.writeHead(404).end(); // Status Code error 404 => Not found
 });
 
 server.listen(3333);

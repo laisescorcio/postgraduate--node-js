@@ -39,8 +39,15 @@ In your terminal:
     - Stateless - não depende dos estados armazenados para funcionar de determinada forma, ou seja, é armazenado em banco de dados por exemplo.
     
 
-- Cabeçalhos (requisição e resposta) são Metadados
+- Cabeçalhos (requisição e resposta) são Metadados (.setHeader())
     - "Content-type": "application/json" => leva a informação como json
+
+- Responses (requisição) são os retornos das chamadas do backend (.writeHead). Status code:
+    - 100 - 199 => Informational responses
+    - 200 - 299 => Successful responses
+    - 300 - 399 => Redirection messages
+    - 400 - 499 => Client error responses
+    - 500 - 599 => Server error responses
 
 
 ## Delving deeper into the subject
