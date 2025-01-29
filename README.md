@@ -3,7 +3,7 @@
 ## To init the application
 In your terminal:
 - Run `npm init -y` -- it will create the package.json
-- Run `npm dev` to build the application -- it will watch all updates in code
+- Run `npm run dev` to build the application -- it will watch all updates in code
 
 
 ## Good to know - Node JS Fundamentals
@@ -21,6 +21,11 @@ In your terminal:
 - params in http.createServer:
     1) `req`: to access all the informations from where is calling the request
     2) `res`: to return a response for where is calling the server
+
+
+- HTTP
+    - método http
+    - URL
 
 
 ## Delving deeper into the subject
