@@ -35,8 +35,12 @@ In your terminal:
 
 
 - Há dois tipos de aplicações:
-    - Stateful - depende dos estados armazenados para funcionar de determinada forma
-    - Stateless - não depende dos estados armazenados para funcionar de determinada forma
+    - Stateful - depende dos estados armazenados para funcionar de determinada forma, ou seja, toda vez que o servidor restartar (ao buildar de novo por exemplo), todas as informações do servidor irão se perder; 
+    - Stateless - não depende dos estados armazenados para funcionar de determinada forma, ou seja, é armazenado em banco de dados por exemplo.
+    
+
+- Cabeçalhos (requisição e resposta) são Metadados
+    - "Content-type": "application/json" => leva a informação como json
 
 
 ## Delving deeper into the subject
