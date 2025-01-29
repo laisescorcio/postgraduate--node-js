@@ -4,6 +4,7 @@
 In your terminal:
 - Run `npm init -y` -- it will create the package.json
 - Run `npm run dev` to build the application -- it will watch all updates in code
+- Run `http localhost:3333` to run the request for this localhost 
 
 
 ## Good to know - Node JS Fundamentals
@@ -23,9 +24,19 @@ In your terminal:
     2) `res`: to return a response for where is calling the server
 
 
-- HTTP
-    - método http
-    - URL
+- No HTTP há dois principais recursos:
+    1) método HTTP (GET, POST, PUT, PATCH, DELETE)
+        - GET => Buscar um recurso do backend
+        - POST => Criar um recurso no backend
+        - PUT => Atualizar um recurso no backend
+        - PATCH => Atualizar uma informação específica de um recurso no backend
+        - DELETE => Deletar um recurso do backend
+    2) URL
+
+
+- Há dois tipos de aplicações:
+    - Stateful - depende dos estados armazenados para funcionar de determinada forma
+    - Stateless - não depende dos estados armazenados para funcionar de determinada forma
 
 
 ## Delving deeper into the subject
