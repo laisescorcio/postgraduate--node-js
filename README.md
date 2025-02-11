@@ -24,25 +24,25 @@ In your terminal:
     2) `res`: to return a response for where is calling the server
 
 
-- No HTTP há dois principais recursos:
-    1) método HTTP (GET, POST, PUT, PATCH, DELETE)
-        - GET => Buscar um recurso do backend
-        - POST => Criar um recurso no backend
-        - PUT => Atualizar um recurso no backend
-        - PATCH => Atualizar uma informação específica de um recurso no backend
-        - DELETE => Deletar um recurso do backend
+- In HTTP there are two main resources:
+    1) HTTP method (GET, POST, PUT, PATCH, DELETE)
+        - GET => Fetch a resource from the backend
+        - POST => Create a resource in the backend
+        - PUT => Update a resource in the backend
+        - PATCH => Update specific information of a resource in the backend
+        - DELETE => Delete a resource from the backend
     2) URL
 
 
-- Há dois tipos de aplicações:
-    - Stateful - depende dos estados armazenados para funcionar de determinada forma, ou seja, toda vez que o servidor restartar (ao buildar de novo por exemplo), todas as informações do servidor irão se perder; 
-    - Stateless - não depende dos estados armazenados para funcionar de determinada forma, ou seja, é armazenado em banco de dados por exemplo.
+- There are two types of applications:
+    - Stateful - depends on stored states to function in a certain way, that is, every time the server restarts (when building again, for example), all server information will be lost;
+    - Stateless - does not depend on stored states to function in a certain way, that is, it is stored in a database, for example.
     
 
-- Cabeçalhos (requisição e resposta) são Metadados (.setHeader())
-    - "Content-type": "application/json" => leva a informação como json
+- Headers (request and response) are Metadata (.setHeader())
+    - "Content-type": "application/json" => takes the information as json   
 
-- Responses (requisição) são os retornos das chamadas do backend (.writeHead). Status code:
+- Responses (request) are the returns from the backend calls (.writeHead). Status code:
     - 100 - 199 => Informational responses
     - 200 - 299 => Successful responses
     - 300 - 399 => Redirection messages
@@ -51,7 +51,10 @@ In your terminal:
 
 
 - Streams:
-    - Ler pequenas partes e poder trabalhar sobre os dados mesmo sem ser o dado por completo (analogia com Netflix, Spotify)
+    - Read small parts and be able to work on the data even if it is not the entire data (analogy with Netflix, Spotify)
+    - Readable Streams - Data stream that can be read little by little. Example: reading a large file from disk, receiving data from an HTTP request, or reading data from a database.
+    - Writable Streams - Data stream that can be written little by little. Example: saving a file to disk, sending an HTTP response, or writing logs.
+
 
 
 ## Delving deeper into the subject
