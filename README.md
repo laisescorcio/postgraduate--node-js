@@ -20,8 +20,8 @@ In your terminal:
 - `server.listen(333)` listen the updates to the localhost:3333
 
 - params in http.createServer:
-    1) `req`: to access all the informations from where is calling the request
-    2) `res`: to return a response for where is calling the server
+    1) `req` (Readable Stream): to access all the informations from where is calling the request
+    2) `res` (Writable Stream): to return a response for where is calling the server
 
 
 - In HTTP there are two main resources:
