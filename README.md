@@ -72,6 +72,7 @@ In your terminal:
                 - callback: function that the writeble method needs to call after finished to write the data. With two params: first param is when it is with error. The second param is the transformed data (must be buffer and string)
     - If you have to read and transform or write data after all chunks is returned, you can use a array, populate it with each chunk and after run de transform or write methods
 
+- Buffers - something inside the node - Buffer represents the memory space of the computer -- it is used to pass data quickly - the data stored in the buffer is used to keep to can be read after, performatively
 
 
 ## Delving deeper into the subject
