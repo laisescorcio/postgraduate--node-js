@@ -15,7 +15,7 @@ In your terminal:
     In file: `const http = require('http')`
     2) ES Modules (ESM) - ECMAScript 2015 (ES6) => 
     In file: `import http from 'node:http'` -- in this case `node:` is for indicate native importations os Node JS
-    In package.json: `"type": "module"`
+    In package.json: `"type": "module"` // using it you have to specify the extensions in the imports, like `import { json } from "./middlewares/json.js"`
 
 - `server.listen(333)` listen the updates to the localhost:3333
 
@@ -73,6 +73,8 @@ In your terminal:
     - If you have to read and transform or write data after all chunks is returned, you can use a array, populate it with each chunk and after run de transform or write methods
 
 - Buffers - something inside the node - Buffer represents the memory space of the computer -- it is used to pass data quickly - the data stored in the buffer is used to keep to can be read after, performatively
+
+- Middleware - function to intercept other file. It iss used with req and res
 
 
 ## Delving deeper into the subject
