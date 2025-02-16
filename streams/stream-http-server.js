@@ -13,8 +13,21 @@ class InverseNumberStream extends Transform {
   }
 }
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   // req (Readable Stream) e res (Writable Streams) are streams
+
+  const buffers = []; // when you need to wait all chunks to be returned to read to transform or write
+
+  for await (const chunk of req) {
+    // to wait each slice of the streams to be returned
+    buffers.push(chunk); // insert in the buffer array
+  }
+
+  const fullStreamContent = Buffer.concat(buffers).toString(); // after all chunks are readed
+
+  console.log(fullStreamContent);
+
+  return res.end(fullStreamContent);
 
   return req.pipe(new InverseNumberStream()).pipe(res);
 });

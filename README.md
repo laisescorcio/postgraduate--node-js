@@ -70,6 +70,7 @@ In your terminal:
                 - chunk: what is sent from readable stream to write - it is a buffer, so it must be a string 
                 - encoding: is how the data is codify
                 - callback: function that the writeble method needs to call after finished to write the data. With two params: first param is when it is with error. The second param is the transformed data (must be buffer and string)
+    - If you have to read and transform or write data after all chunks is returned, you can use a array, populate it with each chunk and after run de transform or write methods
 
 
 
