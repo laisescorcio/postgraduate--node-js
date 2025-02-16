@@ -3,7 +3,7 @@
 //process.stdin -- string inputed on terminal
 //  .pipe(process.stdout) -- string outputed on terminal
 
-import { Readable } from "node:stream";
+import { Readable, Writable } from "node:stream";
 
 class OneToHundredStream extends Readable {
   index = 1;
@@ -24,4 +24,13 @@ class OneToHundredStream extends Readable {
   }
 }
 
-new OneToHundredStream().pipe(process.stdout);
+class MultiplyByTenStream extends Writable {
+  _write(chunk, encoding, callbak) {
+    // required method "_write" on Writable. It doesn't return. It's only to process the data
+
+    console.log(chunk.toString() * 10); // chunk is a buffer. So it must be a string
+    callback();
+  }
+}
+
+new OneToHundredStream().pipe(new MultiplyByTenStream()); // read the data and process multiplying to 10
