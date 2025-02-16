@@ -53,7 +53,13 @@ In your terminal:
 - Streams:
     - Read small parts and be able to work on the data even if it is not the entire data (analogy with Netflix, Spotify)
     - Readable Streams - Data stream that can be read little by little. Example: reading a large file from disk, receiving data from an HTTP request, or reading data from a database.
+        - _read() => required method "_read" on Readable. It return the datas of the Stream. It works delivering datas
     - Writable Streams - Data stream that can be written little by little. Example: saving a file to disk, sending an HTTP response, or writing logs.
+        - _write() => required method "_write" on Writable. It doesn't return. It's only to process the data
+            - params:
+                - chunk: what is sent from readable stream to write - it is a buffer, so it must be a string 
+                - encoding: is how the data is codify
+                - callback: function that the writeble method needs to call after finished to write the data
 
 
 
