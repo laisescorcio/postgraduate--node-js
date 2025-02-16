@@ -3,7 +3,7 @@
 //process.stdin -- string inputed on terminal
 //  .pipe(process.stdout) -- string outputed on terminal
 
-import { Readable, Writable } from "node:stream";
+import { Readable, Writable, Transform } from "node:stream";
 
 class OneToHundredStream extends Readable {
   index = 1;
@@ -24,6 +24,16 @@ class OneToHundredStream extends Readable {
   }
 }
 
+class InverseNumberStream extends Transform {
+  _transform(chunk, encoding, callback) {
+    // required method "_transform" on Transform. It has a return and pass it to Writable Stream
+
+    const transformed = Number(chunk.toCtring()) * -1;
+
+    callback(new Error("Number not valid"), Buffer.from(String(transformed))); // first param is when it is with error. The second param is the transformed data (must be buffer and string)
+  }
+}
+
 class MultiplyByTenStream extends Writable {
   _write(chunk, encoding, callbak) {
     // required method "_write" on Writable. It doesn't return. It's only to process the data
@@ -33,4 +43,6 @@ class MultiplyByTenStream extends Writable {
   }
 }
 
-new OneToHundredStream().pipe(new MultiplyByTenStream()); // read the data and process multiplying to 10
+new OneToHundredStream()
+  .pipe(new InverseNumberStream()) // read the data from Readable and write data to Writeble -- it is a communication between Streams
+  .pipe(new MultiplyByTenStream()); // read the data and process multiplying to 10 and write it
