@@ -1,4 +1,4 @@
-import { Database } from "./middlewares/database.js";
+import { Database } from "../middlewares/database.js";
 import { randomUUID } from "node:crypto";
 
 const database = new Database();
