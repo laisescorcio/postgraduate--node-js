@@ -80,6 +80,8 @@ In your terminal:
     - 'node:fs/promises' [recommended, but not with Streams] - using the new async format: 'promises', using .then().catch(), async and await
     - 'node:fs' - same methods than 'node:fs/promises' but using a old async syntax, using callbacks functions
 
+- RandomUUI() - from node to define a random and unique Id
+
 
 ## Delving deeper into the subject
 
