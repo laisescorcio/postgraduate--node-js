@@ -5,6 +5,17 @@ const databasePath = new URL("../db.json", import.meta.url); // where de 'db.jso
 export class Database {
   #database = {}; // to receive all types of data // the # symbol is to turn database privated in Node
 
+  // to rescue data when the application initializes
+  constructor() {
+    fs.readFile(databasePath, "utf8")
+      .then((data) => {
+        this.#database = JSON.parse(data); // saving in database
+      })
+      .catch(() => {
+        this.#persist(); // if data doesn't exist, create the file empty
+      });
+  }
+
   #persist() {
     fs.writeFile(databasePath, JSON.stringify(this.#database)); // write a file sending a string JSON (must be) of database
   }
