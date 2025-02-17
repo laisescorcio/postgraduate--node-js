@@ -15,7 +15,7 @@ In your terminal:
     In file: `const http = require('http')`
     2) ES Modules (ESM) - ECMAScript 2015 (ES6) => 
     In file: `import http from 'node:http'` -- in this case `node:` is for indicate native importations os Node JS
-    In package.json: `"type": "module"` // using it you have to specify the extensions in the imports, like `import { json } from "./middlewares/json.js"`
+    In package.json: `"type": "module"` // using it you have to specify the extensions in the imports, like `import { json } from "./middlewares/json.js"` and it isn't possible to use `__dirname` or `__filename` functions (you can use `import.meta.url`)
 
 - `server.listen(333)` listen the updates to the localhost:3333
 
@@ -75,6 +75,10 @@ In your terminal:
 - Buffers - something inside the node - Buffer represents the memory space of the computer -- it is used to pass data quickly - the data stored in the buffer is used to keep to can be read after, performatively
 
 - Middleware - function to intercept other file. It iss used with req and res
+
+- File Systems (physical files) 'node:fs' - file of data base to persist data 
+    - 'node:fs/promises' [recommended, but not with Streams] - using the new async format: 'promises', using .then().catch(), async and await
+    - 'node:fs' - same methods than 'node:fs/promises' but using a old async syntax, using callbacks functions
 
 
 ## Delving deeper into the subject
