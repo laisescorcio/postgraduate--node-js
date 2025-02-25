@@ -8,11 +8,14 @@ const server = http.createServer(async (req, res) => {
 
   await json(req, res);
 
+  // to verify the method to call the route
   const route = routes.find((route) => {
     return route.method === method && route.path === url;
   });
 
-  console.log(route);
+  if (route) {
+    return route.handler(req, res);
+  }
 
   return res.writeHead(404).end(); // Status Code error 404 => Not found
 });

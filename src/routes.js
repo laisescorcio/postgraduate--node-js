@@ -1,12 +1,11 @@
-import { Database } from "../database.js";
+import { Database } from "./database.js";
 import { randomUUID } from "node:crypto";
-
 const database = new Database();
 
 export const routes = [
   {
     method: "GET",
-    path: "/users", // or url
+    path: "/users",
     handler: (req, res) => {
       const users = database.select("users");
 
@@ -15,7 +14,7 @@ export const routes = [
   },
   {
     method: "POST",
-    path: "/users", // or url
+    path: "/users",
     handler: (req, res) => {
       const { name, email } = req.body;
 
