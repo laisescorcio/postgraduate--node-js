@@ -82,6 +82,17 @@ In your terminal:
 
 - RandomUUI() - from node to define a random and unique Id
 
+- Three ways to frontend send informations to backend:
+    1) Query params => /users?userId=1234567890&name=John 
+        When you need a stateful URL -- Stateful URL is a URL that can be changed by the user, the informations will be lost when the page is refreshed -- not storage in the server.
+        Sensitive information could'nt be sent through query params.
+    2) Route params => /users/1234567890
+        When you need a resource identification -- to identificate some information -- it is a unique identifier of a resource, like a user id.
+        Sensitive information could'nt be sent through route params.
+    3) Request body => { "name": "John", "email": "john@example.com" }
+        When you need to send a large amount of data to the backend -- it is used to send data to the backend, like a form.
+        Sensitive information could be sent through request body (HTTPs - it is more secure than HTTP)
+
 
 ## Delving deeper into the subject
 
