@@ -80,8 +80,6 @@ In your terminal:
     - 'node:fs/promises' [recommended, but not with Streams] - using the new async format: 'promises', using .then().catch(), async and await
     - 'node:fs' - same methods than 'node:fs/promises' but using a old async syntax, using callbacks functions
 
-- RandomUUI() - from node to define a random and unique Id
-
 - Three ways to frontend send informations to backend:
     1) Query params => /users?userId=1234567890&name=John 
         When you need a stateful URL -- Stateful URL is a URL that can be changed by the user, the informations will be lost when the page is refreshed -- not storage in the server.
@@ -92,6 +90,13 @@ In your terminal:
     3) Request body => { "name": "John", "email": "john@example.com" }
         When you need to send a large amount of data to the backend -- it is used to send data to the backend, like a form.
         Sensitive information could be sent through request body (HTTPs - it is more secure than HTTP)
+
+
+- Node frameworks: Express, Koa, Fastify, etc.
+
+// Libraries:
+- RandomUUI() - from node to define a random and unique Id
+- Regex Previewer - to test the regex before use it
 
 
 ## Delving deeper into the subject
