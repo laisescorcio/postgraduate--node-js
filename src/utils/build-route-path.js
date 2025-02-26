@@ -9,7 +9,7 @@ export function buildRoutePath(path) {
 
   // const test = /\/users\/([a-z0-9\-_]+)/ // to test the regex
 
-  const pathRegex = new RegExp(`^${pathWithParams}`); // We need the string starts (^) with pathWithParams
+  const pathRegex = new RegExp(`^${pathWithParams}(?<query>\\?(.*))?$`); // We need the string starts (^) with pathWithParams. After URL (?), we get all the query params (.*)
 
   return pathRegex;
 }
