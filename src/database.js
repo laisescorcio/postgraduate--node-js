@@ -50,4 +50,13 @@ export class Database {
       this.#persist(); // save the data in the physical file
     }
   }
+
+  update(table, id, data) {
+    const rowIndex = this.#database[table].findIndex((row) => row.id === id); // search the index that we want to update
+
+    if (rowIndex > -1) {
+      this.#database[table][rowIndex] = { id, ...data }; // update the data
+      this.#persist(); // save the data in the physical file
+    }
+  }
 }
