@@ -9,7 +9,12 @@ export const routes = [
     method: "GET",
     path: buildRoutePath("/users"),
     handler: (req, res) => {
-      const users = database.select("users");
+      const { search } = req.query;
+
+      const users = database.select("users", {
+        name: search,
+        email: search,
+      }); // to search for a specific user by name or email
 
       return res.end(JSON.stringify(users));
     },

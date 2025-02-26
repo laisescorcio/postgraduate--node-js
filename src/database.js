@@ -21,8 +21,18 @@ export class Database {
   }
 
   // to select the specifc table to return
-  select(table) {
-    const data = this.#database[table] ?? []; // ?? [] to don't return undefined
+  select(table, search) {
+    let data = this.#database[table] ?? []; // ?? [] to don't return undefined
+
+    if (search) {
+      data = data.filter((row) => {
+        // Object.entries() = convert Object to Arrays = [['name', 'Lais'], ['email', 'lais@gmail.com']]
+        // some = to check if at least one of the elements of the array satisfies the condition. Key (name or email) and value (Lais or lais@gmail.com)
+        return Object.entries(search).some(([key, value]) => {
+          return row[key].toLowerCase().includes(value.toLowerCase());
+        });
+      });
+    }
 
     return data;
   }
