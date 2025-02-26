@@ -41,4 +41,13 @@ export class Database {
 
     return data;
   }
+
+  delete(table, id) {
+    const rowIndex = this.#database[table].findIndex((row) => row.id === id); // search the index thar we want to delete
+
+    if (rowIndex > -1) {
+      this.#database[table].splice(rowIndex, 1); // delete the data
+      this.#persist(); // save the data in the physical file
+    }
+  }
 }
